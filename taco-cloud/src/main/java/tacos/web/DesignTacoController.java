@@ -53,7 +53,7 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign( @ModelAttribute("design") Taco design, Errors errors) {
+    public String processDesign(@ModelAttribute("design") Taco design, Errors errors) {
 
         if(errors.hasErrors()) {
             return "design";
@@ -61,6 +61,8 @@ public class DesignTacoController {
 
         log.info("Processing design: " + design);
 
+
+//after processDesign complets the browser page should redirect to...
         return "redirect:/orders/current";
     }
 
